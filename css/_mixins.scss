@@ -1,0 +1,33 @@
+@mixin flex ($j-c,$mar-1, $mar-2){
+    display: flex;
+    justify-content: $j-c;
+    margin: $mar-1 $mar-2;
+    
+}
+
+@mixin responsive-text($min-size, $max-size) {
+  font-size: clamp(#{$min-size}, 2vw, #{$max-size});
+}
+
+@mixin fancy-button {
+  background-color: $primary-color;
+  color: $text-color;
+  padding: $padding-y $padding-x;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color $transition, transform $transition;
+
+  &:hover {
+    background-color: $hover-color;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
