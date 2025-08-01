@@ -6,7 +6,7 @@ body, p, h1, h2, h3, h4, h5, h6, span, a {
   @include responsive-text(14px, 24px);
   line-height: 1.5;
   font-family: 'Arial', sans-serif;
-  color: #333;
+  
 }
 
 
@@ -268,3 +268,50 @@ main{
     }
 }
 
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+
+    .banner__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: brightness(0.85);
+    }
+
+    .banner__texto {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+        color: #fff;
+        text-shadow: 0 4px 24px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.5);
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    }
+
+    @media (max-width: 700px) {
+        height: 160px;
+        .banner__texto {
+            h1 { font-size: 1.2rem; }
+            p { font-size: 0.9rem; }
+        }
+    }
+}
